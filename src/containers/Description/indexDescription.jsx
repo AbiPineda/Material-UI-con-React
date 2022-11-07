@@ -14,7 +14,7 @@ const Description = (props) => {
                    : <Typography variant="body1">Lorem ipsum dolor sit amet. Ea excepturi doloribus ea praesentium nihil nam dolore laboriosam ad fugit nobis</Typography>         
                 }                
             </Stack>
-            <PaperInformation></PaperInformation>
+            <PaperInformation userState = { userState }></PaperInformation>
             {/* <LocationInformation></LocationInformation> */}
         </Fragment>
     )
