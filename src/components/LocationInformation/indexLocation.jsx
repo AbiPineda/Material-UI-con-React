@@ -12,28 +12,34 @@ const LocationInformation = (props) => {
   const { userState } = props;
   const { location, twitter_username, blog, company } = userState;
   return (
-    <Grid container>
+    <Grid container spacing={2} sx={{ marginTop: "15px" }}>
       {/* Dividimos las columnas en 6 y 6 */}
       <Grid item xs={6}>
-        <Stack direction= "row">
+        <Stack direction="row" spacing={2}>
           <LocationOnIcon />
-          <Typography>{ `${location || 'No disponible'}` }</Typography>
+          <Typography>{`${location || "No disponible"}`}</Typography>
         </Stack>
 
-        <Stack direction= "row">
-        <TwitterIcon/>
-        <Typography>{ `@${twitter_username || 'No disponible'}` }</Typography>
+        <Stack direction="row" spacing={2}>
+          <LanguageIcon />
+          {blog !== "" ? (
+            <a target="_blank" href={blog}>
+              <Typography>{blog}</Typography>
+            </a>
+          ) : (
+            <Typography>No disponible</Typography>
+          )}
         </Stack>
       </Grid>
       <Grid item xs={6}>
-        <Stack direction= "row">
-          <LanguageIcon/>
-          <Typography>{ `${blog || 'No disponible'}` }</Typography>
+        <Stack direction="row" spacing={2}>
+          <TwitterIcon />
+          <Typography>{`@${twitter_username || "No disponible"}`}</Typography>
         </Stack>
 
-        <Stack direction= "row">
+        <Stack direction="row" spacing={2}>
           <BusinessIcon />
-          <Typography>{ `${company || 'No disponible'}` }</Typography>
+          <Typography>{`${company || "No disponible"}`}</Typography>
         </Stack>
       </Grid>
     </Grid>
