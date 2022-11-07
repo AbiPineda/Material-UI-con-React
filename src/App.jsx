@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 
-import Searcher from "./components/searchs/search";
+import Searcher from "./components/Searcher/search";
 import { getGitHubUser } from "./services/users";
 import UserCard from "./containers/userCard/index-userCard";
 
@@ -20,7 +20,8 @@ const App = () => {
     if (userResponse.message === "Not Found") {
       const { octocat } = localStorage;
       setInputUser(octocat);
-      setNotFound(true);
+    /*   setNotFound(true); */
+      gettinUser('octocat');
     } else {
       setUserState(userResponse);
     }
